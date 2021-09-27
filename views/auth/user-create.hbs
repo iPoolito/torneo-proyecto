@@ -1,0 +1,32 @@
+<div>
+  <h2>Register</h2>
+  <form action='/signup' method='POST'>
+    <h2>username</h2>
+    <input type='text' name='username' placeholder='username' />
+
+    <h2>Email</h2>
+    <input type='email' name='email' placeholder='example@gmail.com' />
+
+    <h2>Password</h2>
+    <input type='password' name='password' placeholder='password' />
+
+    <h2>Role</h2>
+    <select name='role'>
+      <option disable selected></option>
+      <option name='admin'>admin</option>
+      <option name='captain'>captain</option>
+      <option name='player'>player</option>
+    </select>
+
+    <button type='submit'>
+      Create Account
+    </button>
+    <h3>Roles</h3>
+    <ul>
+      <li><b>Admin:</b> Only can create Tournaments</li>
+      <li><b>Captain:</b> Can create Teams and join One</li>
+      <li><b>Player:</b> Only can join Teams</li>
+    </ul>
+  </form>
+
+</div>

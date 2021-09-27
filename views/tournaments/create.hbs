@@ -1,0 +1,42 @@
+<div>
+  {{#if currentUser}}
+    {{#if admin}}
+      <h2>Create a tournament</h2>
+      <form action='/tournaments/create' method='POST'>
+
+        <h2>Name of the tournament</h2>
+        <input type='text' name='name' placeholder='last dance' />
+
+        <h2>Game</h2>
+        <select name='game'>
+          <option disable selected></option>
+          <option name='lol'>League Of Legends</option>
+          <option name='smashBros'>Smash Bros</option>
+          <option name='fifa'>FIFA 21</option>
+        </select>
+
+        <h2>Description</h2>
+        <input type='text' name='description' placeholder='Description' />
+
+        <h2>Number of Teams</h2>
+        <select name='numberOfTeams'>
+          <option disable selected></option>
+          <option name='2' type='number'>2</option>
+          <option name='4' type='number'>4</option>
+          <option name='8' type='number'>8</option>
+        </select>
+
+        <button type='submit'>
+          Create tournament
+        </button>
+      </form>
+
+    {{else}}
+      <h2>You need to log in as an Admin to create Tournamets </h2>
+    {{/if}}
+
+  {{else}}
+    <h2>You need to log in as an Admin to create Tournamets </h2>
+  {{/if}}
+
+</div>
