@@ -1,19 +1,35 @@
 <div>
+
+<div>
+<h1>Players</h1>
+<ul>
+{{#each players}}
+<li>{{this.username}} <a href='/user/team/{{../_id}}/{{this._id}}/remove'>remove Player</a></li>
+{{/each}}
+
+</ul>
+
+</div>
+
+<div>
   <h1>Select the players you want to Join </h1>
 
   {{#each filter}}
+
     <div>
 
       <h2> Username:{{this.username}}</h2>
 
       <form action='/user/team/{{../_id}}/{{this._id}}/join' method='POST'>
+
         <button type='submit'>
           Join
         </button>
 
       </form>
 
-      <form action='/user/team/{{../_id}}/{{this._id}}/join' method='POST'>
+      <form action='/user/team/{{../_id}}/{{this._id}}/delete' method='POST'>
+
         <button type='submit'>
           Delete
         </button>
@@ -22,5 +38,5 @@
     </div>
 
   {{/each}}
-
+</div>
 </div>

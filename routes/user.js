@@ -14,5 +14,6 @@ router.get('/team/:id', userController.team)
 //http://localhost:3000/user/team/:idteam/:iduser/join
 
 router.post('/team/:idteam/:iduser/join', userController.teamJoin)
-
+router.post('/team/:idteam/:iduser/delete', userController.teamDelete)
+router.get('/team/:idteam/:iduser/remove', userController.teamRemove)
 module.exports = router

@@ -24,7 +24,7 @@ exports.logOut = (req, res) => {
 
 exports.team = async (req, res) => {
   const { id } = req.params
-  const playerFilter = await Team.findById(id).populate('filter')
+  const playerFilter = await Team.findById(id).populate('filter').populate('players')
   console.log(playerFilter)
   res.render('user/managmentPlayers', playerFilter)
 }
@@ -34,5 +34,17 @@ exports.teamJoin = async (req, res) => {
   const addPlayer = await Team.findByIdAndUpdate(idteam, { $push: { players: iduser } })
   const removePlayer = await Team.findByIdAndUpdate(idteam, { $pull: { filter: iduser } })
 
+  res.redirect(`/user/team/${idteam}`)
+}
+
+exports.teamDelete = async (req, res) => {
+  const { idteam, iduser } = req.params
+  const removePlayer = await Team.findByIdAndUpdate(idteam, { $pull: { filter: iduser } })
+  res.redirect(`/user/team/${idteam}`)
+}
+
+exports.teamRemove = async (req, res) => {
+  const { idteam, iduser } = req.params
+  const removePlayer = await Team.findByIdAndUpdate(idteam, { $pull: { players: iduser } })
   res.redirect(`/user/team/${idteam}`)
 }

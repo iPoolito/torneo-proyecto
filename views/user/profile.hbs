@@ -9,10 +9,11 @@
       {{foundUser.role}}
     </p>
 
-    <h2>Your Team</h2>
+    <h2>Your Teams</h2>
     {{#each foundUser.team}}
       <h3>{{this.name}}</h3>
       <p>{{this.description}} </p>
+      <a href='/user/team/{{this._id}}/edit'>Edit Team</a>
       <a href='/user/team/{{this._id}}'>Managment Team</a>
 
     {{/each}}

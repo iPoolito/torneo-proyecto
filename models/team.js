@@ -1,26 +1,29 @@
 //Importaciones
 const mongoose = require('mongoose')
 //Schema
-const teamSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'team name is required'], //requerido
-    unique: true // unico
+const teamSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'team name is required'], //requerido
+      unique: true // unico
+    },
+    description: String,
+    players: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
+    filter: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
-  description: String,
-  players: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ],
-  filter: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
-})
+  { timestamps: true, versionKey: false }
+)
 
 //Modelo
 const Team = mongoose.model('Team', teamSchema)
