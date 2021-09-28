@@ -1,5 +1,6 @@
 const Tournament = require('./../models/tournament')
 const User = require('./../models/User')
+const Team = require('./../models/team')
 
 exports.home = async (req, res) => {
   const dbTournaments = await Tournament.find()
@@ -47,7 +48,7 @@ exports.joinForm = async (req, res) => {
   const { id } = req.params
   const { teams } = req.body
   const addTeam = await Tournament.findByIdAndUpdate(id, { $push: { teams: teams } })
-
-  console.log(addTeam)
+  const addTournament = await Team.findByIdAndUpdate(teams, { $push: { tournaments: id } })
+  //console.log(addTeam)
   res.redirect(`/tournaments/${id}`)
 }

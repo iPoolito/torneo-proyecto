@@ -1,0 +1,24 @@
+<div>
+
+  <div>
+    <h3>{{this.name}}</h3>
+    <p>Info: {{this.description}}</p>
+    <h4>Players</h4>
+    <ul>
+      {{#each players}}
+        <li>{{this.username}}</li>
+
+      {{/each}}
+    </ul>
+    <h4>Current Tournaments</h4>
+    <ul>
+      {{#each tournaments}}
+        <li><a href='/tournaments/{{this._id}}'> {{this.name}}</a> </li>
+
+      {{/each}}
+    </ul>
+    <a href='/team/list/{{this._id}}'>Join Team</a>
+    <a href='/team/list'>Back</a>
+  </div>
+
+</div>

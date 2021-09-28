@@ -1,5 +1,5 @@
 const router = require('express').Router()
-
+const routeGuards = require('./../middlewares/route-guard')
 const userController = require('../controllers/userController.js')
 const { post } = require('./index.js')
 

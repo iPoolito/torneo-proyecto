@@ -10,7 +10,7 @@
   <p>{{description}}</p>
   <p>Number of Teams: {{numberOfTeams}}</p>
 
-  <a href='/tournaments/{{_id}}/join'>Unir Equipo</a>
+  <a href='/tournaments/{{_id}}/join'>Register Team</a>
   <a href='/tournaments'>Back</a>
   {{#each teams}}
     <div>
@@ -21,7 +21,6 @@
           JOIN TEAM
         </button>
       </form>
-      <a href='/team/{{this.name}}/{{this._id}}'>Join Team</a>
     </div>
   {{/each}}
 </div>

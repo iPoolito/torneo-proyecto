@@ -3,7 +3,7 @@
 const isLoggedIn = (req, res, next) => {
   // SI NO ESTÁS LOGGEADO Y QUIERES ACCEDER A ESA ÁREA... ENTONCES:
   if (!req.session.currentUser) {
-    return res.redirect('/auth/login')
+    return res.redirect('/login')
   }
 
   next()

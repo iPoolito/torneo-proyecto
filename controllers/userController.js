@@ -34,6 +34,8 @@ exports.teamJoin = async (req, res) => {
   const addPlayer = await Team.findByIdAndUpdate(idteam, { $push: { players: iduser } })
   const removePlayer = await Team.findByIdAndUpdate(idteam, { $pull: { filter: iduser } })
 
+  const addToPlayerTeam = await User.findByIdAndUpdate(iduser, { $push: { team: idteam } })
+
   res.redirect(`/user/team/${idteam}`)
 }
 
@@ -46,5 +48,6 @@ exports.teamDelete = async (req, res) => {
 exports.teamRemove = async (req, res) => {
   const { idteam, iduser } = req.params
   const removePlayer = await Team.findByIdAndUpdate(idteam, { $pull: { players: iduser } })
+  const removeToPlayer = await User.findByIdAndUpdate(iduser, { $pull: { team: idteam } })
   res.redirect(`/user/team/${idteam}`)
 }
