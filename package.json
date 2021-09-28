@@ -21,6 +21,7 @@
     "hbs": "^4.1.1",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "sweetalert2": "^11.1.7"
   }
 }

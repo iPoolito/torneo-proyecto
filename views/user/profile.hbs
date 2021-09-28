@@ -13,6 +13,8 @@
     {{#each foundUser.team}}
       <h3>{{this.name}}</h3>
       <p>{{this.description}} </p>
+      <a href='/user/team/{{this._id}}'>Managment Team</a>
+
     {{/each}}
 
   {{else}}

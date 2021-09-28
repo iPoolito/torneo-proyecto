@@ -16,7 +16,12 @@
     <div>
       <h3> {{this.name}}</h3>
       <p>{{this.description}}</p>
-      <a href='#'>More details</a>
+      <form action='/team/{{this.name}}/{{this._id}}' method='POST'>
+        <button type='submit'>
+          JOIN TEAM
+        </button>
+      </form>
+      <a href='/team/{{this.name}}/{{this._id}}'>Join Team</a>
     </div>
   {{/each}}
 </div>

@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const hbs = require('hbs')
+const Swal = require('sweetalert2')
 
 //Middlewares
 require('./db/index')
