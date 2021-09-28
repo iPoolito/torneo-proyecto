@@ -51,3 +51,22 @@ exports.teamRemove = async (req, res) => {
   const removeToPlayer = await User.findByIdAndUpdate(iduser, { $pull: { team: idteam } })
   res.redirect(`/user/team/${idteam}`)
 }
+
+exports.editTeam = async (req, res) => {
+  const { idteam } = req.params
+  const teamFound = await Team.findById(idteam)
+  res.render('user/editTeam', teamFound)
+}
+
+exports.editTeamForm = async (req, res) => {
+  const { idteam } = req.params
+  const { name, description } = req.body
+  const teamFound = await Team.findByIdAndUpdate(idteam, { name, description })
+  console.log(teamFound)
+  res.redirect('/user/profile')
+}
+exports.deleteTeam = async (req, res) => {
+  const { idteam } = req.params
+  const teamDelete = await Team.findByIdAndRemove(idteam)
+  res.redirect('/user/profile')
+}

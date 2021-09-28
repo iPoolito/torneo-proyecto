@@ -50,5 +50,33 @@ exports.joinForm = async (req, res) => {
   const addTeam = await Tournament.findByIdAndUpdate(id, { $push: { teams: teams } })
   const addTournament = await Team.findByIdAndUpdate(teams, { $push: { tournaments: id } })
   //console.log(addTeam)
-  res.redirect(`/tournaments/${id}`)
+  return res.redirect(`/tournaments/${id}`)
+}
+
+exports.editTournament = async (req, res) => {
+  const { id } = req.params
+
+  const tournamentFound = await Tournament.findById(id)
+  return res.render('tournaments/edit', tournamentFound)
+}
+
+exports.editTournamentForm = async (req, res) => {
+  const { id } = req.params
+  const { name, description } = req.body
+  const tourFound = await Tournament.findByIdAndUpdate(id, { name, description })
+  console.log(tourFound)
+  return res.redirect('/tournaments')
+}
+exports.deleteTournament = async (req, res) => {
+  const { id } = req.params
+
+  const tournamentDelet = await Tournament.findByIdAndRemove(id)
+  return res.redirect('/tournaments')
+}
+
+exports.deleteTeam = async (req, res) => {
+  const { idtour, idteam } = req.params
+  const quitTour = await Team.findByIdAndUpdate(idteam, { $pull: { tournaments: idtour } })
+  const teamDeleted = await Tournament.findByIdAndUpdate(idtour, { $pull: { teams: idteam } })
+  return res.redirect(`/tournaments/${idtour}`)
 }

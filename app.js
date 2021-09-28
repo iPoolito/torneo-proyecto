@@ -16,7 +16,7 @@ generateSession(app) // Descomentar esto me da un error en el heroku ERROR HEROK
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.currentUser
   res.locals.admin = req.session.admin
-  //console.log(res.locals.admin)
+  // console.log(res.locals.admin)
   next()
 })
 

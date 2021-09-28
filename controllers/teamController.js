@@ -53,7 +53,7 @@ exports.listJoin = async (req, res) => {
   console.log(filterTeam)
 
   //AGREGAR NOTIFICACION DE QUE ESPERE A SER ACEPTADO
-  res.redirect('/team/list')
+  return res.redirect('/team/list')
 
   Swal.fire({
     title: 'Error!',
@@ -66,5 +66,5 @@ exports.listJoin = async (req, res) => {
 exports.info = async (req, res) => {
   const { id } = req.params
   const teamFound = await Team.findById(id).populate('players').populate('tournaments')
-  res.render('team/info', teamFound)
+  return res.render('team/info', teamFound)
 }

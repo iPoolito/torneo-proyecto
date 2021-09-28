@@ -2,22 +2,25 @@
   <h1>Profile</h1>
 
   {{#if foundUser}}
-
-    <p>
-      Hi
-      {{foundUser.username}}, your account its
-      {{foundUser.role}}
-    </p>
-
-    <h2>Your Teams</h2>
-    {{#each foundUser.team}}
-      <h3>{{this.name}}</h3>
-      <p>{{this.description}} </p>
-      <a href='/user/team/{{this._id}}/edit'>Edit Team</a>
-      <a href='/user/team/{{this._id}}'>Managment Team</a>
-
-    {{/each}}
-
+    <div>
+      <p>
+        Hi
+        {{foundUser.username}}, your account its
+        {{foundUser.role}}
+      </p>
+    </div>
+    <div>
+      <h2>Your Teams</h2>
+      {{#each foundUser.team}}
+        <div>
+          <h3>{{this.name}}</h3>
+          <p>{{this.description}} </p>
+          <a href='/user/team/{{this._id}}/edit'>Edit Team</a>
+          <a href='/user/team/{{this._id}}'>Managment Team</a>
+          <a href='/user/team/{{this._id}}/delete'>Delete Team</a>
+        </div>
+      {{/each}}
+    </div>
   {{else}}
     <p>Aún no has iniciado sesión</p>
   {{/if}}

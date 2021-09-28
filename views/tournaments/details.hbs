@@ -12,15 +12,29 @@
 
   <a href='/tournaments/{{_id}}/join'>Register Team</a>
   <a href='/tournaments'>Back</a>
+
   {{#each teams}}
     <div>
       <h3> {{this.name}}</h3>
       <p>{{this.description}}</p>
+
       <form action='/team/{{this.name}}/{{this._id}}' method='POST'>
         <button type='submit'>
-          JOIN TEAM
+          Join Team
         </button>
       </form>
+ 
+      <form action='/tournaments/{{../_id}}/{{this._id}}/remove' method='POST'>
+ 
+        <button type='submit'>
+          Remove Team
+        </button>
+
+      </form>
+
+    
+
+
     </div>
   {{/each}}
 </div>

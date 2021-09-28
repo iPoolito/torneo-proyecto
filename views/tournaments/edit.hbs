@@ -1,0 +1,19 @@
+<div>
+  {{#if admin}}
+    <form action='edit' method='POST'>
+
+      <h1>Name</h1>
+      <input type='text' value='{{name}}' name='name' />
+
+      <h1>description</h1>
+      <input type='text' name='description' value='{{description}}' />
+
+      <button type='submit'>
+        Update
+      </button>
+    </form>
+
+  {{else}}
+    <h2>Only Admin's can edit Tournaments </h2>
+  {{/if}}
+</div>
