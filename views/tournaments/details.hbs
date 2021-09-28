@@ -9,6 +9,14 @@
   <h2>{{game}}</h2>
   <p>{{description}}</p>
   <p>Number of Teams: {{numberOfTeams}}</p>
-  <p>{{teams}}</p>
+
+  <a href='/tournaments/{{_id}}/join'>Unir Equipo</a>
   <a href='/tournaments'>Back</a>
+  {{#each teams}}
+    <div>
+      <h3> {{this.name}}</h3>
+      <p>{{this.description}}</p>
+      <a href='#'>More details</a>
+    </div>
+  {{/each}}
 </div>
