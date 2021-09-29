@@ -1,15 +1,20 @@
-<div>
+<div class='row'>
   <h2>Register</h2>
-  <form action='/signup' method='POST'>
-    <h2>username</h2>
-    <input type='text' name='username' placeholder='username' />
+  <form class='col s12' action='/signup' method='POST'>
 
-    <h2>Email</h2>
-    <input type='email' name='email' placeholder='example@gmail.com' />
+    <div class='input-field col s12'>
+      <h2>username</h2>
+      <input type='text' name='username' placeholder='username' />
+    </div>
 
-    <h2>Password</h2>
-    <input type='password' name='password' placeholder='password' />
-
+    <div class='input-field col s12'>
+      <h2>Email</h2>
+      <input type='email' name='email' placeholder='example@gmail.com' />
+    </div>
+    <div class='input-field col s12'>
+      <h2>Password</h2>
+      <input type='password' name='password' placeholder='password' />
+    </div>
     <h2>Role</h2>
     <select name='role'>
       <option disable selected></option>
@@ -18,8 +23,8 @@
       <option name='player'>player</option>
     </select>
 
-    <button type='submit'>
-      Create Account
+    <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Create Account
+      <i class='material-icons right'>send</i>
     </button>
     <h3>Roles</h3>
     <ul>

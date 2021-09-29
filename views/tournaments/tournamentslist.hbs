@@ -9,8 +9,11 @@
       alt=''
     
     />
+     <span class="card-title">{{this.game}}||{{this.name}}</span>
     </div>
-    <span class="card-title">{{this.game}}||{{this.name}}</span>
+    <div class="card-content">
+          <p>{{this.description}}</p>
+        </div>
 <div class="card-action">
  <a href='/tournaments/{{this._id}}'>More Details</a>
     {{#if ../isAdmin}}

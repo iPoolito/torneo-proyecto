@@ -1,48 +1,78 @@
-<div>
-  <img
-    src='https://miracomosehace.com/wp-content/uploads/2020/08/logo-League-of-Legends.jpg'
-    alt=''
-    width='200'
-    height='100'
-  />
-  <h1>{{name}}</h1>
-  <h2>{{game}}</h2>
-  <p>{{description}}</p>
-  <p>Number of Teams: {{numberOfTeams}}</p>
-{{#if isAdmin}}
-  <a href='/tournaments/{{_id}}/join'>Register Team</a>
-  {{/if}}
-  <a href='/tournaments'>Back</a>
+<div class="row">
 
-  {{#each teams}}
-    <div>
-      <h3> {{this.name}}</h3>
-      <p>{{this.description}}</p>
+  <div class="col s12 m6">
 
-      <!-- #if currentUser -->
-      
-    {{#if ../isAdmin}}
-      <div>
-      
-      <form action='/team/{{this.name}}/{{this._id}}' method='POST'>
-        <button type='submit'>
-          Join Team
-        </button>
-      </form>
- 
-      <form action='/tournaments/{{../_id}}/{{this._id}}/remove' method='POST'>
- 
-        <button type='submit'>
-          Remove Team
-        </button>
+     <div class="card">
 
-      </form>
-     
-  
+       <div class="card-image">
+              <img
+          src='https://miracomosehace.com/wp-content/uploads/2020/08/logo-League-of-Legends.jpg'
+          alt='' />
+          <span class="card-title">{{name}}</span>
+          {{#if isAdmin}}
+            <a href='/tournaments/{{_id}}/join' class="btn-floating halfway-fab waves-effect waves-light red"> <i class="material-icons">add</i></a>
+            {{/if}}
+       </div>
+
+     <div class="card-content">
+      <p>Game: {{game}} </br>  Description: {{description}}</br>   Number of Teams: {{numberOfTeams}}</p>
+        </div>
+
+      <div class="card-action">
+       <a href='/tournaments'>Back</a>
       </div>
-      {{/if}}
-  <!-- /if -->
 
+  
+      <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        {{#each teams}}
+         
+
+          
+
+        <li class="tab"><a href="#{{this.name}}">Team {{this.name}}</a></li>
+
+            {{/each}}
+        </ul>
+        </div> 
+
+          <div class="card-content grey lighten-4">
+            {{#each teams}}
+            <div id="{{this.name}}">
+               <p>{{this.description}}</p>
+              
+                 {{#if ../currentUser}}
+
+             <form action='/team/{{this.name}}/{{this._id}}' method='POST'>
+             <button type='submit'>
+                      Join Team
+             </button>
+            </form>
+            {{/if}}
+
+
+             {{#if ../isAdmin}}
+           <form action='/tournaments/{{../_id}}/{{this._id}}/remove' method='POST'>
+ 
+           <button type='submit'>
+            Remove Team
+           </button>
+
+             </form>
+     
+              {{/if}}
+
+
+
+            </div>
+              {{/each}}
+            
+          </div>
+      {{!-- Cierra el class del contendor --}}
+            
+             
     </div>
-  {{/each}}
+ 
+ 
+  </div>
 </div>

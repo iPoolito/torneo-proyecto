@@ -2,19 +2,28 @@
   <h1>Teams</h1>
 </div>
 
-<div>
+<div class='row'>
   {{#each teamsList}}
-    <div>
-      <h3>{{this.name}}</h3>
-      <h5>Current Tournaments</h5>
-      <ul>
-        {{#each tournaments}}
-          <li><a href='/tournaments/{{this._id}}'> {{this.name}}</a> </li>
+    <div class='col s12 m7'>
+      <div class='card'>
+        <div class='card-image'>
+          <img src='https://i.pinimg.com/originals/0f/f6/61/0ff661edacd5d8a6cfe1d43d55bc9da7.jpg' alt='' />
+          <span class='card-title'>{{this.name}}</span>
+        </div>
 
-        {{/each}}
-      </ul>
-      <a href='/team/list/{{this._id}}/info'>Details</a>
+        <div class='card-content'>
+          <h5>Current Tournaments</h5>
+          <ul>
+            {{#each tournaments}}
+              <li><a href='/tournaments/{{this._id}}'> {{this.name}}</a> </li>
 
+            {{/each}}
+          </ul>
+        </div>
+        <div class='card-action'>
+          <a href='/team/list/{{this._id}}/info'>Details</a>
+        </div>
+      </div>
     </div>
   {{/each}}
 </div>
