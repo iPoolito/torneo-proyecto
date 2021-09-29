@@ -1,13 +1,17 @@
-<h2>Create a Team</h2>
-<form action='/team/create' method='POST'>
+{{#if isAdmin}}
+  <h2>Create a Team</h2>
+  <form action='/team/create' method='POST'>
 
-  <h2>Name of the team</h2>
-  <input type='text' name='name' placeholder='Liquid' />
+    <h2>Name of the team</h2>
+    <input type='text' name='name' placeholder='Liquid' />
 
-  <h2>Description</h2>
-  <input type='text' name='description' placeholder='Best team ever' />
+    <h2>Description</h2>
+    <input type='text' name='description' placeholder='Best team ever' />
 
-  <button type='submit'>
-    Create Team
-  </button>
-</form>
+    <button type='submit'>
+      Create Team
+    </button>
+  </form>
+{{else}}
+  <h1>Just Admins can Create Teams</h1>
+{{/if}}

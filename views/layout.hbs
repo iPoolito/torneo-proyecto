@@ -5,13 +5,21 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='ie=edge' />
     <title>{{title}}</title>
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' />
+
+    {{! <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' />
     <link
       href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css'
       rel='stylesheet'
       integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU'
       crossorigin='anonymous'
-    />
+    /> }}
+
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' />
+
+    <!-- Compiled and minified CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' />
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
@@ -26,8 +34,9 @@
 
           <li> <a href='/tournaments'>Tournaments</a></li>
           <li> <a href='/team/list'>Teams</a></li>
-          {{#if admin}}
+          {{#if isAdmin}}
             <li> <a href='/tournaments/create'>Create a tournament</a></li>
+
             <li> <a href='/team/create'> Create a Team</a></li>
           {{/if}}
           <li> <a href='/user/profile'> Profile</a></li>
@@ -55,6 +64,12 @@
     </div>
 
     <script src='/javascripts/script.js'></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+
+    <script>
+      M.AutoInit()
+    </script>
   </body>
 
 </html>

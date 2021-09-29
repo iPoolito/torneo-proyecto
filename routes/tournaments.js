@@ -17,9 +17,9 @@ router.get('/:id/join', routeGuards.isLoggedIn, tournamentController.join)
 router.post('/:id/join', tournamentController.joinForm)
 
 //http://localhost:3000/torunaments/:id/edit
-router.get('/:id/edit', tournamentController.editTournament)
-router.post('/:id/edit', tournamentController.editTournamentForm)
-router.get('/:id/delete', tournamentController.deleteTournament)
+router.get('/:id/edit', routeGuards.isLoggedIn, tournamentController.editTournament)
+router.post('/:id/edit', routeGuards.isLoggedIn, tournamentController.editTournamentForm)
+router.get('/:id/delete', routeGuards.isLoggedIn, tournamentController.deleteTournament)
 
 //http://localhost:3000/torunaments/:teamname/:idteam/remove
 router.post('/:idtour/:idteam/remove', tournamentController.deleteTeam)

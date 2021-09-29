@@ -1,5 +1,5 @@
 <div>
-  {{#if admin}}
+  {{#if isAdmin}}
     <form action='/tournaments/{{id}}/join' method='POST'>
       <h1>Select the team that you want to join</h1>
       <select name='teams'>

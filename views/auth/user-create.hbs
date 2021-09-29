@@ -14,7 +14,7 @@
     <select name='role'>
       <option disable selected></option>
       <option name='admin'>admin</option>
-      <option name='captain'>captain</option>
+      {{! <option name='captain'>captain</option> }}
       <option name='player'>player</option>
     </select>
 
@@ -23,8 +23,8 @@
     </button>
     <h3>Roles</h3>
     <ul>
-      <li><b>Admin:</b> Only can create Tournaments</li>
-      <li><b>Captain:</b> Can create Teams and join One</li>
+      <li><b>Admin:</b> Create Tournaments and Teams</li>
+      {{! <li><b>Captain:</b> Can create Teams and join One</li> }}
       <li><b>Player:</b> Only can join Teams</li>
     </ul>
   </form>

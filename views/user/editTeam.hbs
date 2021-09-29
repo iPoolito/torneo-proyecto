@@ -1,15 +1,22 @@
-<div>
+{{#if isAdmin}}
+  <div>
 
-  <form action='edit' method='POST'>
+    <form action='edit' method='POST'>
 
-    <h1>Name</h1>
-    <input type='text' value='{{name}}' name='name' />
+      <h1>Name</h1>
+      <input type='text' value='{{name}}' name='name' />
 
-    <h1>description</h1>
-    <input type='text' name='description' value='{{description}}' />
+      <h1>description</h1>
+      <input type='text' name='description' value='{{description}}' />
 
-    <button type='submit'>
-      Update
-    </button>
-  </form>
-</div>
+      <button type='submit'>
+        Update
+      </button>
+    </form>
+  </div>
+
+{{else}}
+
+  <h1>Only admins can edit Teams</h1>
+
+{{/if}}

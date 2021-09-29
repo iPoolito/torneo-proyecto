@@ -9,8 +9,9 @@
   <h2>{{game}}</h2>
   <p>{{description}}</p>
   <p>Number of Teams: {{numberOfTeams}}</p>
-
+{{#if isAdmin}}
   <a href='/tournaments/{{_id}}/join'>Register Team</a>
+  {{/if}}
   <a href='/tournaments'>Back</a>
 
   {{#each teams}}
@@ -18,6 +19,11 @@
       <h3> {{this.name}}</h3>
       <p>{{this.description}}</p>
 
+      <!-- #if currentUser -->
+      
+    {{#if ../isAdmin}}
+      <div>
+      
       <form action='/team/{{this.name}}/{{this._id}}' method='POST'>
         <button type='submit'>
           Join Team
@@ -31,9 +37,11 @@
         </button>
 
       </form>
-
-    
-
+     
+  
+      </div>
+      {{/if}}
+  <!-- /if -->
 
     </div>
   {{/each}}

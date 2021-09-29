@@ -1,20 +1,27 @@
 <H2>Tournaments List</H2>
+<div class="row">
 {{#each tournamentList}}
-  <div>
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
     <img
       src='https://miracomosehace.com/wp-content/uploads/2020/08/logo-League-of-Legends.jpg'
       alt=''
-      width='200'
-      height='100'
+    
     />
-    <h3>{{this.name}}</h3>
-    <h4>{{this.game}}</h4>
-
-    <a href='/tournaments/{{this._id}}'>More Details</a>
-
-    <a href='/tournaments/{{this._id}}/edit'>Edit tournament</a>
-    <a href='/tournaments/{{this._id}}/delete'>Delete tournament</a>
-
+    </div>
+    <span class="card-title">{{this.game}}||{{this.name}}</span>
+<div class="card-action">
+ <a href='/tournaments/{{this._id}}'>More Details</a>
+    {{#if ../isAdmin}}
+      <a href='/tournaments/{{this._id}}/edit'>Edit tournament</a>
+      <a href='/tournaments/{{this._id}}/delete'>Delete tournament</a>
+    {{/if}}
+  </div>
+   
+    </div>
   </div>
 
 {{/each}}
+
+</div>

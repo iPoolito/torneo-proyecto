@@ -10,12 +10,27 @@ require('./db/index')
 require('./config')(app)
 
 const generateSession = require('./config/session-config')
-generateSession(app) // Descomentar esto me da un error en el heroku ERROR HEROKU
-//RUTEO
+generateSession(app)
+
+//Ruteo
 
 app.use((req, res, next) => {
-  res.locals.currentUser = req.session.currentUser
-  res.locals.admin = req.session.admin
+  req.app.locals.currentUser = req.session.currentUser
+
+  req.app.locals.isAdmin = false
+
+  if (req.session.currentUser && req.session.currentUser.role === 'admin') {
+    req.app.locals.isAdmin = true
+  }
+
+  if (req.session.currentUser && req.session.currentUser.role === 'captain') {
+    req.app.locals.isCaptain = true
+  }
+
+  if (req.session.currentUser && req.session.currentUser.role === 'player') {
+    req.app.locals.isPlayer = true
+  }
+
   // console.log(res.locals.admin)
   next()
 })

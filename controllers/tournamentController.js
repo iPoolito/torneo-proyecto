@@ -31,6 +31,11 @@ exports.details = async (req, res) => {
 
   const tournamentDetails = await Tournament.findById(id).populate('teams')
   console.log(tournamentDetails)
+  //
+  console.log(req.app.locals)
+  const { isAdmin } = req.app.locals
+  console.log(isAdmin)
+  //
   return res.render('tournaments/details', tournamentDetails)
 }
 

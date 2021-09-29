@@ -66,8 +66,14 @@ exports.logInForm = async (req, res) => {
       })
     }
     //Comparacion
-    if (foundUser.role == 'admin') {
-      req.session.admin = foundUser
+    if (foundUser.role === 'admin') {
+      req.app.locals.isAdmin = true
+    }
+    if (foundUser.role === 'captain') {
+      req.app.locals.isCaptain = true
+    }
+    if (foundUser.role === 'player') {
+      req.app.locals.isPlayer = true
     }
     //SI coincide Crear una Sesion y retornar al pagina de exito
     req.session.currentUser = foundUser

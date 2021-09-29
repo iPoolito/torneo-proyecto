@@ -8,6 +8,7 @@ exports.profile = async (req, res) => {
   const { _id } = req.session.currentUser
   const foundUser = await User.findById(_id).populate('team')
   const title = 'Profile'
+
   res.render('user/profile', { foundUser, title })
 }
 

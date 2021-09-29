@@ -15,9 +15,11 @@
         <div>
           <h3>{{this.name}}</h3>
           <p>{{this.description}} </p>
+          {{#if ../isAdmin}}
           <a href='/user/team/{{this._id}}/edit'>Edit Team</a>
           <a href='/user/team/{{this._id}}'>Managment Team</a>
           <a href='/user/team/{{this._id}}/delete'>Delete Team</a>
+          {{/if}}
         </div>
       {{/each}}
     </div>
