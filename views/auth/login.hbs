@@ -1,16 +1,18 @@
-<div>
+<div class='row'>
 
   <h2>LOG IN</h2>
 
-  <form action='/login' method='POST'>
-    <h2>Email</h2>
-    <input type='email' name='email' placeholder='email@mail.com' />
-
-    <h2>Password</h2>
-    <input type='password' name='password' placeholder='password' />
-
-    <button type='submit'>
-      LOG IN
+  <form class='col s12' action='/login' method='POST'>
+    <div class='input-field col s6'>
+      <h2>Email</h2>
+      <input class='validate' type='email' name='email' placeholder='email@mail.com' />
+    </div>
+    <div class='input-field col s6'>
+      <h2>Password</h2>
+      <input class='validate' type='password' name='password' placeholder='password' />
+    </div>
+    <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Submit
+      <i class='material-icons right'>send</i>
     </button>
 
     {{#if errorMessage}}

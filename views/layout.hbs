@@ -26,38 +26,70 @@
   <body>
 
     <nav>
+      <div class='nav-wrapper indigo darken-4'>
+        <a href='/' class='brand-logo'>BattleShow</a>
+        <a href='#' data-target='mobile-demo' class='sidenav-trigger'><i class='material-icons'>menu</i></a>
+        <ul class='right hide-on-med-and-down'>
 
-      <ul>
+          {{#if currentUser}}
+            <li> <a href='/tournaments'>Tournaments</a></li>
+            <li> <a href='/team/list'>Teams</a></li>
+            {{#if isAdmin}}
+              <li> <a href='/tournaments/create'>Create a tournament</a></li>
 
-        {{#if currentUser}}
-          <li> <a href='/'>Home</a></li>
+              <li> <a href='/team/create'> Create a Team</a></li>
+            {{/if}}
+            <li> <a href='/user/profile'> Profile</a></li>
 
-          <li> <a href='/tournaments'>Tournaments</a></li>
-          <li> <a href='/team/list'>Teams</a></li>
-          {{#if isAdmin}}
-            <li> <a href='/tournaments/create'>Create a tournament</a></li>
+            <li>
+              <form action='/logout' method='POST'>
+                <button class='waves-effect indigo darken-4 btn-large'>Log Out</button>
+              </form>
+            </li>
 
-            <li> <a href='/team/create'> Create a Team</a></li>
+          {{else}}
+            <li> <a href='/'>Home</a></li>
+            <li> <a href='/tournaments'>Tournaments</a></li>
+            <li> <a href='/team/list'>Teams</a></li>
+            <li> <a href='/signup'> Sign up</a></li>
+            <li> <a href='/login'> Log in</a></li>
+
           {{/if}}
-          <li> <a href='/user/profile'> Profile</a></li>
 
-          <li>
-            <form action='/logout' method='POST'>
-              <button>Log Out</button>
-            </form>
-          </li>
-
-        {{else}}
-          <li> <a href='/'>Home</a></li>
-          <li> <a href='/tournaments'>Tournaments</a></li>
-          <li> <a href='/team/list'>Teams</a></li>
-          <li> <a href='/signup'> Sign up</a></li>
-          <li> <a href='/login'> Log in</a></li>
-
-        {{/if}}
-
-      </ul>
+        </ul>
+      </div>
     </nav>
+
+    <ul class='sidenav' id='mobile-demo'>
+
+      {{#if currentUser}}
+        <li> <a href='/'>Home</a></li>
+
+        <li> <a href='/tournaments'>Tournaments</a></li>
+        <li> <a href='/team/list'>Teams</a></li>
+        {{#if isAdmin}}
+          <li> <a href='/tournaments/create'>Create a tournament</a></li>
+
+          <li> <a href='/team/create'> Create a Team</a></li>
+        {{/if}}
+        <li> <a href='/user/profile'> Profile</a></li>
+
+        <li>
+          <form action='/logout' method='POST'>
+            <button class='waves-effect indigo darken-4 btn-large'>Log Out</button>
+          </form>
+        </li>
+
+      {{else}}
+        <li> <a href='/'>Home</a></li>
+        <li> <a href='/tournaments'>Tournaments</a></li>
+        <li> <a href='/team/list'>Teams</a></li>
+        <li> <a href='/signup'> Sign up</a></li>
+        <li> <a href='/login'> Log in</a></li>
+
+      {{/if}}
+
+    </ul>
 
     <div class='container'>
       {{{body}}}
