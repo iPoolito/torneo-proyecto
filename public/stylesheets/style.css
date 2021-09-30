@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Signika Negative', sans-serif;
+}
+body {
+  background-color: #ebebe4;
+}
+.topHome {
+  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
+  background-image: url('https://images.contentstack.io/v3/assets/bltad9188aa9a70543a/blte06167f518dd1579/5f5c00ebfef72a4b5f96597f/01-Header.jpg?width=3200&height=1800');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #ebebe4;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.news {
+  display: flex;
+
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.col {
+  width: 30%;
+  color: #ebebe4;
+  border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .news {
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
