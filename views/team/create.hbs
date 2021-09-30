@@ -1,17 +1,21 @@
-{{#if isAdmin}}
-  <h2>Create a Team</h2>
-  <form action='/team/create' method='POST'>
+<div class='createTour'>
 
-    <h2>Name of the team</h2>
-    <input type='text' name='name' placeholder='Liquid' />
+  {{#if isAdmin}}
+    <h2>Create a Team</h2>
+    <form action='/team/create' method='POST' class='formCreateTour'>
 
-    <h2>Description</h2>
-    <input type='text' name='description' placeholder='Best team ever' />
+      <h2>Name of the team</h2>
+      <input type='text' name='name' placeholder='Liquid' />
 
-    <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Create Team
-      <i class='material-icons right'>check</i>
-    </button>
-  </form>
-{{else}}
-  <h1>Just Admins can Create Teams</h1>
-{{/if}}
+      <h2>Description</h2>
+      <input type='text' name='description' placeholder='Best team ever' />
+
+      <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Create Team
+        <i class='material-icons right'>check</i>
+      </button>
+    </form>
+  {{else}}
+    <h1>Just Admins can Create Teams</h1>
+  {{/if}}
+
+</div>

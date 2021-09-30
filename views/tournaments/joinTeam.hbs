@@ -1,6 +1,6 @@
-<div>
+<div class='joinTeam'>
   {{#if isAdmin}}
-    <form action='/tournaments/{{id}}/join' method='POST'>
+    <form action='/tournaments/{{id}}/join' method='POST' class='formjoinTeam'>
       <h1>Select the team that you want to join</h1>
       <select name='teams'>
         <option disable selected value=''></option>
@@ -10,7 +10,7 @@
         {{/each}}
 
       </select>
-      <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Join
+      <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Join
         <i class='material-icons right'>check</i>
       </button>
     </form>

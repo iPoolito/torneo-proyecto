@@ -7,6 +7,7 @@
 body {
   background-color: #ebebe4;
 }
+
 .topHome {
   /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   background-image: url('https://images.contentstack.io/v3/assets/bltad9188aa9a70543a/blte06167f518dd1579/5f5c00ebfef72a4b5f96597f/01-Header.jpg?width=3200&height=1800');
@@ -41,12 +42,132 @@ body {
   color: #ebebe4;
   border-radius: 8px;
 }
+/* Torneos */
+
+.topTourlist {
+  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
+  background-image: url('http://i.imgur.com/CfzLJxp.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #ebebe4;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tcard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* detalles Toreno */
+
+.tourDetails {
+  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
+  padding: 30px;
+
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38628400-c0c7-4103-9902-c9476ff98742/d80oh6i-49a9d301-f894-4b97-b061-cc11994f5de0.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM4NjI4NDAwLWMwYzctNDEwMy05OTAyLWM5NDc2ZmY5ODc0MlwvZDgwb2g2aS00OWE5ZDMwMS1mODk0LTRiOTctYjA2MS1jYzExOTk0ZjVkZTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DSjHrqSgfhqkLOSJvELq74JnnUzrP5l-saZ7GN2aMxU');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #ebebe4;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.infoIn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.form {
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+/* formularios */
+.joinTeam {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.formjoinTeam {
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.createTour {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.formCreateTour {
+  margin: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+::placeholder {
+  color: black;
+  opacity: 0.5; /* Firefox */
+}
+
 @media (max-width: 800px) {
   .news {
     display: flex;
 
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+  .card {
+    width: 70vh;
+    color: #ebebe4;
+    border-radius: 8px;
+  }
+  .col {
+    width: 70vh;
+    color: #ebebe4;
+    border-radius: 8px;
   }
 }

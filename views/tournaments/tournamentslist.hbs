@@ -1,8 +1,13 @@
-<H2>Tournaments List</H2>
+<div class='topTourlist'>
+  <h1 class='waves-effect grey darken-4 btn-large'> <b>Tournament list </b> </h1>
+  
+</div>
+<br>
+<div class="containerT">
 <div class="row">
 {{#each tournamentList}}
   <div class="col s12 m6">
-    <div class="card">
+    <div class="card grey darken-4">
       <div class="card-image">
     <img
       src='https://miracomosehace.com/wp-content/uploads/2020/08/logo-League-of-Legends.jpg'
@@ -14,11 +19,11 @@
     <div class="card-content">
           <p>{{this.description}}</p>
         </div>
-<div class="card-action">
- <a href='/tournaments/{{this._id}}'>More Details</a>
+<div class="card-action tcard">
+ <a class='waves-effect red darken-1 btn-large' href='/tournaments/{{this._id}}'>More Details</a>
     {{#if ../isAdmin}}
-      <a href='/tournaments/{{this._id}}/edit'>Edit tournament</a>
-      <a href='/tournaments/{{this._id}}/delete'>Delete tournament</a>
+      <a  class='waves-effect red darken-1 btn-large'href='/tournaments/{{this._id}}/edit'>Edit tournament</a>
+      <a class='waves-effect red darken-1 btn-large' href='/tournaments/{{this._id}}/delete'>Delete tournament</a>
     {{/if}}
   </div>
    
@@ -27,4 +32,5 @@
 
 {{/each}}
 
+</div>
 </div>
