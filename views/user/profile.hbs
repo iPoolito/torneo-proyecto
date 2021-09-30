@@ -1,29 +1,37 @@
-<div>
-  <h1>Profile</h1>
+<div class='topProfile'>
+  <a  href="#profile" class='waves-effect grey darken-4 btn-large'> <b> Profile </b> </a>
+</div>
+
+<div class='createUser'>
+  <div class='formContainerSign'>
 
   {{#if foundUser}}
     <div>
-      <p>
+      <h5 id="profile">
         Hi
         {{foundUser.username}}, your account its
         {{foundUser.role}}
-      </p>
+      </h5>
     </div>
-    <div>
+
+
+    <div class='teamInfo'>
+      <div class='teamInfoContainer'>
       <h2>Your Teams</h2>
       {{#each foundUser.team}}
-        <div>
+      
           <h3>{{this.name}}</h3>
-          <p>{{this.description}} </p>
           {{#if ../isAdmin}}
-          <a href='/user/team/{{this._id}}/edit'>Edit Team</a>
-          <a href='/user/team/{{this._id}}'>Managment Team</a>
-          <a href='/user/team/{{this._id}}/delete'>Delete Team</a>
+          <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}/edit'>Edit Team</a>
+          <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}'>Managment</a>
+          <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}/delete'>Delete Team</a>
           {{/if}}
-        </div>
+       
       {{/each}}
+      </div>
     </div>
   {{else}}
     <p>Aún no has iniciado sesión</p>
   {{/if}}
+</div>
 </div>

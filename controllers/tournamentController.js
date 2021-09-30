@@ -15,6 +15,11 @@ exports.create = async (req, res) => {
 
 exports.createForm = async (req, res) => {
   const { name, game, description, numberOfTeams } = req.body
+  if (name === '' || game === '' || description === '' || numberOfTeams === '') {
+    return res.render('tournaments/create', {
+      errorMessage: 'Empty fields, please fill all'
+    })
+  }
   const newTournament = await Tournament.create({
     name,
     game,
@@ -52,6 +57,10 @@ exports.joinForm = async (req, res) => {
   //console.log(req.body) // teams : ID DEL EQUIPO
   const { id } = req.params
   const { teams } = req.body
+  if (teams === '' || id === '') {
+    return res.redirect(`/tournaments/${id}`)
+  }
+
   const addTeam = await Tournament.findByIdAndUpdate(id, { $push: { teams: teams } })
   const addTournament = await Team.findByIdAndUpdate(teams, { $push: { tournaments: id } })
   //console.log(addTeam)

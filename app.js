@@ -56,7 +56,7 @@ app.use('/tournaments', tournaments)
 app.use('/team', team)
 
 //Manejo de errores
-require('./error-handling')(app)
+//require('./error-handling')(app)
 //Servidor
 app.listen(process.env.PORT, () => {
   console.log(`Servidor activado: ${process.env.PORT}`)

@@ -12,6 +12,13 @@ exports.signup = async (req, res) => {
 exports.signupForm = async (req, res) => {
   //Destructuracion de objetos de los datos obtenidos del req.body
   const { username, email, password, role } = req.body
+
+  if (email === '' || password === '' || username === '' || role === '') {
+    return res.render('auth/user-create', {
+      errorMessage: 'Empty fields, please fill all'
+    })
+  }
+
   //Se crea la base de la contrasena encriptada
   const salt = await bcryptjs.genSalt(saltRounds)
   //Con la base hecha, mezcla la contrasena con los caracteres randoms
@@ -27,7 +34,7 @@ exports.signupForm = async (req, res) => {
   console.log(newUser)
 
   //Regresa a la pagina de inicio
-  res.redirect('/')
+  res.redirect('/login')
 }
 
 //LOGIN
@@ -41,7 +48,7 @@ exports.logInForm = async (req, res) => {
   const { email, password } = req.body
   //Validacion de que no haya ningun campo vacio
   if (email === '' || password === '') {
-    return res.render('/login', {
+    return res.render('auth/login', {
       errorMessage: 'Empty fields, please fill all'
     })
   }
@@ -53,7 +60,7 @@ exports.logInForm = async (req, res) => {
     //VALIDACIONES
     //Si el usuario no existe
     if (!foundUser) {
-      return res.render('/login', {
+      return res.render('auth/login', {
         errorMessage: 'Wrong email or password. Try again'
       })
     }
@@ -61,7 +68,7 @@ exports.logInForm = async (req, res) => {
     const isItMatched = await bcryptjs.compareSync(password, foundUser.passwordHash)
     //SI la password no coincide
     if (isItMatched === false) {
-      return res.render('/login', {
+      return res.render('auth/login', {
         errorMessage: 'Wrong email or password. Try again'
       })
     }

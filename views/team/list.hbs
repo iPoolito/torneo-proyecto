@@ -1,29 +1,35 @@
-<div>
-  <h1>Teams</h1>
+<div class='topTeamlist'>
+  <a href='#teams' class='waves-effect grey darken-4 btn-large'> <b>Teams </b> </a>
 </div>
+<br />
+<div class='cardTeam'>
+  <div id='teams' class='row containerT'>
+    {{#each teamsList}}
+      <div class='col s12 m7grey darken-4'>
+        <div class='card grey darken-4 highCard'>
 
-<div class='row'>
-  {{#each teamsList}}
-    <div class='col s12 m7'>
-      <div class='card'>
-        <div class='card-image'>
-          <img src='https://i.pinimg.com/originals/0f/f6/61/0ff661edacd5d8a6cfe1d43d55bc9da7.jpg' alt='' />
-          <span class='card-title'>{{this.name}}</span>
-        </div>
+          <div class='card-image grey darken-4'>
+            <img src='https://i.pinimg.com/originals/0f/f6/61/0ff661edacd5d8a6cfe1d43d55bc9da7.jpg' alt='' />
+            <span class='card-title'>{{this.name}}</span>
+          </div>
 
-        <div class='card-content'>
-          <h5>Current Tournaments</h5>
-          <ul>
-            {{#each tournaments}}
-              <li><a href='/tournaments/{{this._id}}'> {{this.name}}</a> </li>
+          <div class='card-content grey darken-4'>
+            <h5>Current Tournaments</h5>
+            <ul>
+              {{#each tournaments}}
+                <li><a class='waves-effect red darken-1 btn-small' href='/tournaments/{{this._id}}'> {{this.name}}</a>
+                </li>
 
-            {{/each}}
-          </ul>
-        </div>
-        <div class='card-action'>
-          <a href='/team/list/{{this._id}}/info'>Details</a>
+              {{/each}}
+            </ul>
+          </div>
+
+          <div class='card-action grey darken-4'>
+            <a class='waves-effect red darken-1 btn-large' href='/team/list/{{this._id}}/info'>Details</a>
+          </div>
+
         </div>
       </div>
-    </div>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>

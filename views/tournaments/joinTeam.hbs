@@ -1,20 +1,23 @@
-<div class='joinTeam'>
-  {{#if isAdmin}}
-    <form action='/tournaments/{{id}}/join' method='POST' class='formjoinTeam'>
-      <h1>Select the team that you want to join</h1>
-      <select name='teams'>
-        <option disable selected value=''></option>
-        {{#each foundUser.team}}
+<div class='createUser'>
+  <div class='formContainerSign'>
+    {{#if isAdmin}}
+      <form action='/tournaments/{{id}}/join' method='POST' class='formjoinTeam'>
+        <h1>Select the team that you want to join</h1>
+        <select name='teams'>
+          <option disable selected value=''></option>
+          {{#each foundUser.team}}
 
-          <option value='{{this._id}}'>{{this.name}}</option>
-        {{/each}}
+            <option value='{{this._id}}'>{{this.name}}</option>
+          {{/each}}
 
-      </select>
-      <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Join
-        <i class='material-icons right'>check</i>
-      </button>
-    </form>
-  {{else}}
-    <h2>You need to be Captain to join a team</h2>
-  {{/if}}
+        </select>
+        <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Join
+          <i class='material-icons right'>check</i>
+        </button>
+
+      </form>
+    {{else}}
+      <h2>You need to be Captain to join a team</h2>
+    {{/if}}
+  </div>
 </div>

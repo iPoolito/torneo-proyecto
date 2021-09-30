@@ -1,31 +1,36 @@
+<div class='topManagment'>
+  <a  href="#managment" class='waves-effect grey darken-4 btn-large'> <b> Managment </b> </a>
+</div>
+
+
 
 {{#if isAdmin}}
 
 <div>
 
-<div>
-<h1>Players</h1>
+<div class='createUser'>
+  
+<div class='formContainerSign'>
+
+<h1 id="managment">Players</h1>
 <ul>
 {{#each players}}
-<li>{{this.username}} <a href='/user/team/{{../_id}}/{{this._id}}/remove'>remove Player</a></li>
+<li> <b>{{this.username}} </b><a class='waves-effect red darken-1 btn-small' href='/user/team/{{../_id}}/{{this._id}}/remove'>Remove player</a></li>
 {{/each}}
 
 </ul>
 
-</div>
 
-<div>
   <h1>Select the players you want to Join </h1>
-
   {{#each filter}}
 
-    <div>
+    
 
       <h2> Username:{{this.username}}</h2>
 
-      <form action='/user/team/{{../_id}}/{{this._id}}/join' method='POST'>
+      <form action='/user/team/{{../_id}}/{{this._id}}/join' method='POST' >
 
-      <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Join
+      <button class='waves-effect red darken-1 btn-small' type='submit' name='action'>Join
         <i class='material-icons right'>person_add</i>
       </button>
 
@@ -33,14 +38,19 @@
 
       <form action='/user/team/{{../_id}}/{{this._id}}/delete' method='POST'>
 
-          <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Reject
+          <button class='waves-effect red darken-1 btn-small' type='submit' name='action'>Reject
         <i class='material-icons right'>remove_circle</i>
       </button>
 
       </form>
-    </div>
+
+     
+    
 
   {{/each}}
+  </br>
+   <a class='waves-effect red darken-1 btn-large' href='/user/profile'>Back</a>
+  </div>
 </div>
 </div>
 

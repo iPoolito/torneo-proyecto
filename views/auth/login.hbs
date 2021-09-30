@@ -1,24 +1,28 @@
-<div class='row'>
+<div class='topLogIn'>
+  <a href='#login' class='waves-effect grey darken-4 btn-large'> <b> Log In </b> </a>
+</div>
 
-  <h2>LOG IN</h2>
+<div class='createUser'>
+  <div class='formContainerSign'>
 
-  <form class='col s12' action='/login' method='POST'>
-    <div class='input-field col s6'>
+    <form class='col s12' action='/login' method='POST' class='formCreateUser'>
+
       <h2>Email</h2>
       <input class='validate' type='email' name='email' placeholder='email@mail.com' />
-    </div>
-    <div class='input-field col s6'>
+
       <h2>Password</h2>
       <input class='validate' type='password' name='password' placeholder='password' />
-    </div>
-    <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Submit
-      <i class='material-icons right'>send</i>
-    </button>
 
-    {{#if errorMessage}}
-      <p style='color: red'>{{errorMessage}}</p>
-    {{/if}}
+      <button id='login' class='waves-effect red darken-1 btn-large' type='submit' name='action'>Log in
+        <i class='material-icons right'>send</i>
+      </button>
 
-  </form>
+      {{#if errorMessage}}
+        <br />
+        <p style='color: #e3455e'>{{errorMessage}}</p>
+      {{/if}}
 
+    </form>
+
+  </div>
 </div>

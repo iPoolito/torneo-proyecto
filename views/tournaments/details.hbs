@@ -1,5 +1,5 @@
 <div class='tourDetails'>
-  <h1 class='waves-effect grey darken-4 btn-large' > <b>Details  </b> </h1>
+  <a href='#details' class='waves-effect grey darken-4 btn-large' > <b>Details  </b> </a>
   
 </div>
 <br>
@@ -25,9 +25,13 @@
         </div>
 
       <div class="card-action grey darken-4">
-       <a class='waves-effect red darken-1 btn-large' href='/tournaments'>Back</a>
+       <a id="details" class='waves-effect red darken-1 btn-large' href='/tournaments'>Back</a>
       </div>
 
+     {{#if errorMessage}}
+          <br />
+          <p style='color: #e3455e'>{{errorMessage}}</p>
+        {{/if}}
   
       <div class="card-tabs grey darken-4">
       <ul class="tabs tabs-fixed-width grey darken-4">

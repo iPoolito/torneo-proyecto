@@ -1,37 +1,42 @@
-<div class='row'>
-  <h2>Register</h2>
-  <form class='col s12' action='/signup' method='POST'>
+<div class='topSignUp'>
+  <a href='#signin' class='waves-effect grey darken-4 btn-large'> <b> Sign Up </b> </a>
+</div>
 
-    <div class='input-field col s12'>
-      <h2>username</h2>
+<div class='createUser'>
+  <div class='formContainerSign'>
+    <form class='col s12' action='/signup' method='POST' class='formCreateUser'>
+      <h2>Username</h2>
       <input type='text' name='username' placeholder='username' />
-    </div>
 
-    <div class='input-field col s12'>
       <h2>Email</h2>
       <input type='email' name='email' placeholder='example@gmail.com' />
-    </div>
-    <div class='input-field col s12'>
+
       <h2>Password</h2>
       <input type='password' name='password' placeholder='password' />
-    </div>
-    <h2>Role</h2>
-    <select name='role'>
-      <option disable selected></option>
-      <option name='admin'>admin</option>
-      {{! <option name='captain'>captain</option> }}
-      <option name='player'>player</option>
-    </select>
 
-    <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Create Account
-      <i class='material-icons right'>send</i>
-    </button>
-    <h3>Roles</h3>
-    <ul>
-      <li><b>Admin:</b> Create Tournaments and Teams</li>
-      {{! <li><b>Captain:</b> Can create Teams and join One</li> }}
-      <li><b>Player:</b> Only can join Teams</li>
-    </ul>
-  </form>
+      <h2>Role</h2>
+      <select name='role'>
+        <option disable selected></option>
+        <option name='admin'>admin</option>
+        {{! <option name='captain'>captain</option> }}
+        <option name='player'>player</option>
+      </select>
 
+      <button id='signin' class='waves-effect red darken-1 btn-large' type='submit' name='action'>Sign Up
+        <i class='material-icons right'>send</i>
+      </button>
+
+      {{#if errorMessage}}
+        <br />
+        <p style='color: #e3455e'>{{errorMessage}}</p>
+      {{/if}}
+
+      <h3>Roles</h3>
+      <ul>
+        <li><b>Admin:</b> Create Tournaments and Teams</li>
+        {{! <li><b>Captain:</b> Can create Teams and join One</li> }}
+        <li><b>Player:</b> Only can join Teams</li>
+      </ul>
+    </form>
+  </div>
 </div>

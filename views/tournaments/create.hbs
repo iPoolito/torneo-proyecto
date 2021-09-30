@@ -1,42 +1,52 @@
-<div class='createTour'>
-  {{#if currentUser}}
-    {{#if isAdmin}}
-      <h2>Create a tournament</h2>
-      <form action='/tournaments/create' method='POST' class='formCreateTour'>
+<div class='topCreateTour'>
+  <a href='#create' class='waves-effect grey darken-4 btn-large'> <b> Create Tournament </b> </a>
+</div>
 
-        <h2>Name of the tournament</h2>
-        <input type='text' name='name' placeholder='last dance' />
+<div class='createUser'>
+  <div class='formContainerSign'>
+    {{#if currentUser}}
+      {{#if isAdmin}}
+        <form action='/tournaments/create' method='POST' class='formCreateUser'>
 
-        <h2>Game</h2>
-        <select name='game'>
-          <option disable selected></option>
-          <option name='lol'>League Of Legends</option>
-          <option name='smashBros'>Smash Bros</option>
-          <option name='fifa'>FIFA 21</option>
-        </select>
+          <h2>Name of the tournament</h2>
+          <input type='text' name='name' placeholder='last dance' />
 
-        <h2>Description</h2>
-        <input type='text' name='description' placeholder='Description' />
+          <h2>Game</h2>
+          <select name='game'>
+            <option disable selected></option>
+            <option name='lol'>League Of Legends</option>
+            <option name='smashBros'>Smash Bros</option>
+            <option name='fifa'>FIFA 21</option>
+          </select>
 
-        <h2>Number of Teams</h2>
-        <select name='numberOfTeams'>
-          <option disable selected></option>
-          <option name='2' type='number'>2</option>
-          <option name='4' type='number'>4</option>
-          <option name='8' type='number'>8</option>
-        </select>
+          <h2>Description</h2>
+          <input type='text' name='description' placeholder='Description' />
 
-        <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Create Tournament
-          <i class='material-icons right'>present_to_all</i>
-        </button>
-      </form>
+          <h2>Number of Teams</h2>
+          <select name='numberOfTeams'>
+            <option disable selected></option>
+            <option name='2' type='number'>2</option>
+            <option name='4' type='number'>4</option>
+            <option name='8' type='number'>8</option>
+          </select>
+
+          <button id='create' class='waves-effect red darken-1 btn-large' type='submit' name='action'>Create Tournament
+            <i class='material-icons right'>present_to_all</i>
+          </button>
+          {{#if errorMessage}}
+            <br />
+            <p style='color: #e3455e'>{{errorMessage}}</p>
+          {{/if}}
+
+        </form>
+
+      {{else}}
+        <h2>You need to log in as an Admin to create Tournamets </h2>
+      {{/if}}
 
     {{else}}
       <h2>You need to log in as an Admin to create Tournamets </h2>
     {{/if}}
 
-  {{else}}
-    <h2>You need to log in as an Admin to create Tournamets </h2>
-  {{/if}}
-
+  </div>
 </div>

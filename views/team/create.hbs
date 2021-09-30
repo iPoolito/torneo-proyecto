@@ -1,21 +1,33 @@
-<div class='createTour'>
+<div class='createTeam'>
+  <a href='#create' class='waves-effect grey darken-4 btn-large'> <b> Create team </b> </a>
+</div>
 
-  {{#if isAdmin}}
-    <h2>Create a Team</h2>
-    <form action='/team/create' method='POST' class='formCreateTour'>
+<div class='createUser'>
 
-      <h2>Name of the team</h2>
-      <input type='text' name='name' placeholder='Liquid' />
+  <div class='formContainerSign'>
 
-      <h2>Description</h2>
-      <input type='text' name='description' placeholder='Best team ever' />
+    {{#if isAdmin}}
+      <form action='/team/create' method='POST' class='formCreateUser'>
 
-      <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Create Team
-        <i class='material-icons right'>check</i>
-      </button>
-    </form>
-  {{else}}
-    <h1>Just Admins can Create Teams</h1>
-  {{/if}}
+        <h2>Name of the team</h2>
+        <input type='text' name='name' placeholder='Liquid' />
+
+        <h2>Description</h2>
+        <input type='text' name='description' placeholder='Best team ever' />
+
+        <button id='create' class='waves-effect red darken-1 btn-large' type='submit' name='action'>Create Team
+          <i class='material-icons right'>check</i>
+        </button>
+        {{#if errorMessage}}
+          <br />
+          <p style='color: #e3455e'>{{errorMessage}}</p>
+        {{/if}}
+
+      </form>
+    {{else}}
+      <h1>Just Admins can Create Teams</h1>
+    {{/if}}
+
+  </div>
 
 </div>

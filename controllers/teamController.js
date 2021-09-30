@@ -9,6 +9,11 @@ exports.create = async (req, res) => {
 
 exports.createForm = async (req, res) => {
   const { name, description } = req.body
+  if (name === '' || description === '') {
+    return res.render('team/create', {
+      errorMessage: 'Empty fields, please fill all'
+    })
+  }
   const id = req.session.currentUser._id
   const newTeam = await Team.create({ name, description })
   console.log(newTeam)
