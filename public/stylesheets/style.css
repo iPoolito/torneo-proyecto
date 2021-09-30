@@ -443,13 +443,4 @@ textarea {
     color: #ebebe4;
     border-radius: 8px;
   }
-  .parallax {
-    min-height: 100px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 }
