@@ -1,5 +1,6 @@
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
+
 const generateSession = app => {
   app.set('trust proxy', 1)
 

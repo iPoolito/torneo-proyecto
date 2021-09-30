@@ -1,16 +1,15 @@
-//Importaciones
 const mongoose = require('mongoose')
-//Schema
+
 const tournamentSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'tournament name is required'], //requerido
+      required: [true, 'tournament name is required'],
       unique: true // unico
     },
     game: {
       type: String,
-      required: [true, 'tournament game is required'] //requerido
+      required: [true, 'tournament game is required']
     },
     description: {
       type: String,
@@ -30,7 +29,6 @@ const tournamentSchema = new mongoose.Schema(
   { timestamps: true, versionKey: false }
 )
 
-//Modelo
 const Tournament = mongoose.model('Tournament', tournamentSchema)
-//Exportacion
+
 module.exports = Tournament

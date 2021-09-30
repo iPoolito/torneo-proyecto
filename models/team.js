@@ -1,12 +1,11 @@
-//Importaciones
 const mongoose = require('mongoose')
-//Schema
+
 const teamSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'team name is required'], //requerido
-      unique: true // unico
+      required: [true, 'team name is required'],
+      unique: true
     },
     description: String,
     players: [
@@ -31,7 +30,6 @@ const teamSchema = new mongoose.Schema(
   { timestamps: true, versionKey: false }
 )
 
-//Modelo
 const Team = mongoose.model('Team', teamSchema)
-//Exportacion
+
 module.exports = Team

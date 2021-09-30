@@ -1,15 +1,12 @@
-// 1. IMPORTACIONES
 const mongoose = require('mongoose')
-
-// 2. SCHEMA
 
 const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: [true, 'Username is required'], //requerido
-      unique: true, // unico
-      trim: true //Sin espacios
+      required: [true, 'Username is required'],
+      unique: true,
+      trim: true
     },
     email: {
       type: String,
@@ -27,7 +24,7 @@ const userSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Team'
       }
-    ], // one to many - BASE DE DATOS
+    ],
     role: {
       type: String,
       require: [true, 'Roll is required']
@@ -36,8 +33,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true, versionKey: false }
 )
 
-// 3. MODELO
 const User = mongoose.model('User', userSchema)
 
-// 4. EXPORTACIÓN
 module.exports = User

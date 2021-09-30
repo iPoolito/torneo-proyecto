@@ -1,4 +1,3 @@
-//Importaciones
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -12,8 +11,7 @@ require('./config')(app)
 const generateSession = require('./config/session-config')
 generateSession(app)
 
-//Ruteo
-
+//Router
 app.use((req, res, next) => {
   req.app.locals.currentUser = req.session.currentUser
 
@@ -30,8 +28,6 @@ app.use((req, res, next) => {
   if (req.session.currentUser && req.session.currentUser.role === 'player') {
     req.app.locals.isPlayer = true
   }
-
-  // console.log(res.locals.admin)
   next()
 })
 
@@ -55,9 +51,10 @@ app.use('/tournaments', tournaments)
 //http://localhost:3000/team
 app.use('/team', team)
 
-//Manejo de errores
+//ERROR HANDLING
 //require('./error-handling')(app)
-//Servidor
+
+//SERVER
 app.listen(process.env.PORT, () => {
   console.log(`Servidor activado: ${process.env.PORT}`)
   return

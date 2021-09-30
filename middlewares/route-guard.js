@@ -1,7 +1,5 @@
-// isLoggedIn
-// Se utiliza para bloquear áreas privadas de usuarios no "loggeados". Deben "loggearse".
+//Block areas urser's without log
 const isLoggedIn = (req, res, next) => {
-  // SI NO ESTÁS LOGGEADO Y QUIERES ACCEDER A ESA ÁREA... ENTONCES:
   if (!req.session.currentUser) {
     return res.redirect('/login')
   }
@@ -9,8 +7,7 @@ const isLoggedIn = (req, res, next) => {
   next()
 }
 
-// isLoggedOut
-// Se utiliza para bloquear las áreas de registro e iniciar sesión de usuarios ya loggeados.
+// Block areas user's already log
 
 const isLoggedOut = (req, res, next) => {
   if (req.session.currentUser) {

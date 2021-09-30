@@ -9,9 +9,11 @@
 body {
   background-color: #ebebe4;
 }
+button {
+  font-family: 'Signika Negative', sans-serif;
+}
 
 .topHome {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   background-image: url('https://images.contentstack.io/v3/assets/bltad9188aa9a70543a/blte06167f518dd1579/5f5c00ebfef72a4b5f96597f/01-Header.jpg?width=3200&height=1800');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -49,7 +51,6 @@ body {
 /* Torneos */
 
 .topTourlist {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   background-image: url('http://i.imgur.com/CfzLJxp.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -81,7 +82,6 @@ body {
 /* detalles Toreno */
 
 .tourDetails {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   padding: 30px;
 
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38628400-c0c7-4103-9902-c9476ff98742/d80oh6i-49a9d301-f894-4b97-b061-cc11994f5de0.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM4NjI4NDAwLWMwYzctNDEwMy05OTAyLWM5NDc2ZmY5ODc0MlwvZDgwb2g2aS00OWE5ZDMwMS1mODk0LTRiOTctYjA2MS1jYzExOTk0ZjVkZTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DSjHrqSgfhqkLOSJvELq74JnnUzrP5l-saZ7GN2aMxU');
@@ -159,9 +159,7 @@ body {
 }
 /* signup */
 .topSignUp {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   padding: 30px;
-
   background-image: url('https://nexus.leagueoflegends.com/wp-content/uploads/2019/09/Caps_rp5fg7fqkyhmztp61hdb.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -183,9 +181,7 @@ body {
   background-size: cover;
 }
 .topLogIn {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   padding: 30px;
-
   background-image: url('http://jugadordepc.com/wp-content/uploads/2021/08/Segun-los-informes-Riot-trasladara-League-of-Legends-Worlds-2021.jpeg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -208,7 +204,6 @@ body {
 }
 .createTeam {
   padding: 30px;
-
   background-image: url('https://metro.co.uk/wp-content/uploads/2019/09/UKLC-Summer-Finals-2019-Joe-Brady-2057-354e.jpg?quality=90&strip=all&crop=0px%2C228px%2C2048px%2C1076px&resize=1200%2C630');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -232,7 +227,6 @@ body {
 
 .topCreateTour {
   padding: 30px;
-
   background-image: url('https://nexus.leagueoflegends.com/wp-content/uploads/2020/01/CoverImage_xh4ey30pet5zkkpwz7g3.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -256,7 +250,6 @@ body {
 
 .topProfile {
   padding: 30px;
-
   background-image: url('https://i1.wp.com/ramenswag.com/wp-content/uploads/2020/08/wp6012335.jpg?fit=1563%2C880&ssl=1');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -280,7 +273,6 @@ body {
 
 .topManagment {
   padding: 30px;
-
   background-image: url('https://forums.comunidades.riotgames.com/t5/image/serverpage/image-id/5812iFD263D28A3960483/image-size/large/is-moderation-mode/true?v=v2&px=999');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -346,9 +338,7 @@ textarea {
 /* Teams views */
 
 .topTeamlist {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   padding: 30px;
-
   background-image: url('https://arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/HQRX3QP235FPJK5OGKIL4YLAYI.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -392,9 +382,7 @@ textarea {
 }
 
 .topTeamInfo {
-  /* background-image: url('https://www.edropian.com/wp-content/uploads/League-of-Legends-Warriors-Song-Video-Clip-World-Championship-2014.gif'); */
   padding: 30px;
-
   background-image: url('https://leaguefeed.net/wp-content/uploads/2021/03/league-of-legends-pro-players-salary.jpeg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -421,11 +409,13 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .teamInfoContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   color: #ebebe4;
@@ -452,5 +442,14 @@ textarea {
     width: 70vh;
     color: #ebebe4;
     border-radius: 8px;
+  }
+  .parallax {
+    min-height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
