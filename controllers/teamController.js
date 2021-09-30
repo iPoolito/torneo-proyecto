@@ -25,6 +25,7 @@ exports.createForm = async (req, res) => {
 
 exports.join = async (req, res) => {
   //console.log(req.params)
+
   const { id } = req.params //ID TEAM
   const _id = req.session.currentUser._id // ID USER
 
@@ -32,14 +33,7 @@ exports.join = async (req, res) => {
   console.log(filterTeam)
 
   //AGREGAR NOTIFICACION DE QUE ESPERE A SER ACEPTADO
-  res.redirect('/team/list')
-
-  Swal.fire({
-    title: 'Error!',
-    text: 'Wait to be accepted',
-    icon: 'error',
-    confirmButtonText: 'Cool'
-  })
+  res.redirect('/tournaments?success=true')
 }
 
 exports.list = async (req, res) => {
@@ -58,14 +52,7 @@ exports.listJoin = async (req, res) => {
   console.log(filterTeam)
 
   //AGREGAR NOTIFICACION DE QUE ESPERE A SER ACEPTADO
-  return res.redirect('/team/list')
-
-  Swal.fire({
-    title: 'Error!',
-    text: 'Wait to be accepted',
-    icon: 'error',
-    confirmButtonText: 'Cool'
-  })
+  res.redirect('/tournaments?success=true')
 }
 
 exports.info = async (req, res) => {

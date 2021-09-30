@@ -1,22 +1,27 @@
-{{#if isAdmin}}
-  <div>
+<div class='createUser'>
+  <div class='formContainerSign'>
+    {{#if isAdmin}}
+      <div>
 
-    <form action='edit' method='POST'>
+        <form action='edit' method='POST'>
 
-      <h1>Name</h1>
-      <input type='text' value='{{name}}' name='name' />
+          <h1>Name</h1>
+          <input type='text' value='{{name}}' name='name' />
 
-      <h1>description</h1>
-      <input type='text' name='description' value='{{description}}' />
+          <h1>description</h1>
+          <input type='text' name='description' value='{{description}}' />
 
-      <button class='btn waves-effect indigo darken-4' type='submit' name='action'>Update
-        <i class='material-icons right'>update</i>
-      </button>
-    </form>
+          <button class='waves-effect red darken-1 btn-large' type='submit' name='action'>Update
+            <i class='material-icons right'>update</i>
+          </button>
+        </form>
+      </div>
+
+    {{else}}
+
+      <h1>Only admins can edit Teams</h1>
+
+    {{/if}}
   </div>
 
-{{else}}
-
-  <h1>Only admins can edit Teams</h1>
-
-{{/if}}
+</div>

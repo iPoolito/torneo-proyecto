@@ -54,7 +54,7 @@
                  {{#if ../currentUser}}
 
              <form action='/team/{{this.name}}/{{this._id}}' method='POST' class="form">
-             <button class='waves-effect red darken-1 btn-large' type='submit'>
+             <button id="joinTeamBtn" class='waves-effect red darken-1 btn-large' type='submit'>
                       Join {{this.name}}
              </button>
             </form>
@@ -86,3 +86,4 @@
  
   </div>
 </div>
+

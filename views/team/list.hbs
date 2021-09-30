@@ -2,8 +2,14 @@
   <a href='#teams' class='waves-effect grey darken-4 btn-large'> <b>Teams </b> </a>
 </div>
 <br />
+{{#if errorMessage}}
+  <br />
+  <h1 style='color: #e3455e'>{{errorMessage}}</h1>
+{{/if}}
 <div class='cardTeam'>
+
   <div id='teams' class='row containerT'>
+
     {{#each teamsList}}
       <div class='col s12 m7grey darken-4'>
         <div class='card grey darken-4 highCard'>

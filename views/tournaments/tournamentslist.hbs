@@ -34,3 +34,28 @@
 
 </div>
 </div>
+
+<script>
+  document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('success');
+    
+  if(myParam){
+
+ Swal.fire({
+    title: 'Success!',
+   text: 'Wait to be acepted',
+    icon: 'success',
+    confirmButtonText: 'Done'
+  })
+
+  }
+  
+  },
+  false
+);
+     
+</script>
