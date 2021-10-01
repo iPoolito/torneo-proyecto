@@ -422,6 +422,11 @@ textarea {
   background-color: #211e29;
   border-radius: 8px;
 }
+.links {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
 
 @media (max-width: 800px) {
   .news {

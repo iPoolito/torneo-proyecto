@@ -22,14 +22,17 @@
 
      
       {{#each foundUser.team}}
-      
-          <h3>{{this.name}}</h3>
+       <h3>{{this.name}}</h3>
+       <br />
+          <img src="{{this.imageUrl}}" alt="" width="400" height="400">
+         
           {{#if ../isAdmin}}
           <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}/edit'>Edit Team</a>
-          <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}'>Managment</a>
+          <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}'>Managment</a> 
           <a class='waves-effect red darken-1 btn-small' href='/user/team/{{this._id}}/delete'>Delete Team</a>
           {{/if}}
-       
+      <br />
+      <br />
       {{/each}}
        </div>
       </div>

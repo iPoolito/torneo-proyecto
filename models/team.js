@@ -25,7 +25,8 @@ const teamSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Tournament'
       }
-    ]
+    ],
+    imageUrl: String
   },
   { timestamps: true, versionKey: false }
 )

@@ -69,13 +69,13 @@ exports.editTeam = async (req, res) => {
 
 exports.editTeamForm = async (req, res) => {
   const { idteam } = req.params
-  const { name, description } = req.body
+  const { name, description, imageUrl } = req.body
 
   if (name === '' || description === '') {
     return res.redirect(`/user/profile`)
   }
 
-  const teamFound = await Team.findByIdAndUpdate(idteam, { name, description })
+  const teamFound = await Team.findByIdAndUpdate(idteam, { name, description, imageUrl })
 
   res.redirect('/user/profile')
 }

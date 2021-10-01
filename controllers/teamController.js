@@ -7,7 +7,7 @@ exports.create = async (req, res) => {
 }
 
 exports.createForm = async (req, res) => {
-  const { name, description } = req.body
+  const { name, description, imageUrl } = req.body
 
   if (name === '' || description === '') {
     return res.render('team/create', {
@@ -16,7 +16,7 @@ exports.createForm = async (req, res) => {
   }
 
   const id = req.session.currentUser._id
-  const newTeam = await Team.create({ name, description })
+  const newTeam = await Team.create({ name, description, imageUrl })
 
   const userJoinTeam = await User.findByIdAndUpdate(id, { $push: { team: newTeam._id } })
 
